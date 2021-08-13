@@ -1,0 +1,34 @@
+<% layout ('layouts/boilerplate') %> 
+<div class="row">
+       <div class="col-6 offset-3">
+            <h1>Edit</h1>
+    <form action="/diams/<%= diam._id %>?_method=PUT" method="POST" novalidate class='validated-form'>
+        <div class="mb-3">
+        <label class="form-label" for="title">Title:</label>
+        <input class="form-control" type="text" name="title" id="title" placeholder="name" value="<%= diam.title %>" required>
+        <div class='valid-feedback'>Looks good!!</div>
+        </div>
+        <div class="mb-3">
+        <label class="form-label" for="body">Body:</label><br>
+        <textarea class="form-control" name="body" id="body" placeholder="body" cols="20" rows="3" required><%= diam.body %></textarea>
+        <div class='valid-feedback'>Looks good!!</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="isActive">IsActive:</label>
+            <select name="isActive" id="isActive">
+                <option value='active' <%= diam.isActive === 'active' ? 'selected': '' %> >Active</option>
+                <option value='inactive' <%= diam.isActive === 'inactive' ? 'selected': '' %>>Inactive</option>
+            </select>
+        </div>
+        <div class="mb-3">
+        <label class="form-label" for="location">Location:</label>
+        <input class="form-control" type="text" name="location" id="location" placeholder="location" value="<%= diam.location %>" required>
+        <div class='valid-feedback'>Looks good!!</div>
+        </div>
+        <div class="mb-3">
+        <button class='btn btn-warning'>Update</button>
+        <a class="btn btn-primary" href="/diams">Back</a>
+        <div class="mb-3">
+    </form>
+       </div>
+   </div>

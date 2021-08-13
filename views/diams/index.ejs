@@ -1,0 +1,12 @@
+<% layout ('layouts/boilerplate') %> 
+<div class="row">
+        <div class="col-6 offset-3">
+            <h3>Name of Titles:</h3>
+                <ul>
+                    <% for(let diam of diams) { %> 
+                    <li><a href="/diams/<%= diam._id %>"><%= diam.title %> </a></li>
+                        <% } %> 
+                </ul>
+    <a class="btn btn-primary" href="/diams/new">Add New</a>
+        </div>
+    </div>
